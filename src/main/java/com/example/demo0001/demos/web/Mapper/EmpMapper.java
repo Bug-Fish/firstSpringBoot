@@ -23,7 +23,9 @@ public interface EmpMapper {
     @Select("select * from emp where id=#{id}")
     Emp selectById(Integer id);
     //@Update("update emp set image=#{image},username=#{username},name=#{name},gender=#{gender},job=#{job},entrydate=#{entrydate},dept_id=#{deptId},update_time=#{updateTime} where id=#{id}")
-    void updateById(Emp emp);
+    void updateById(Emp emp );
+    @Select("select * from emp where username = #{username} and password = #{password}")
+    Emp getByUsernameAndPassword(Emp emp);
 //    @Select("select * from emp limit #{page},#{pageSize}")
 //    Emp pages(@Param("page") Integer page, @Param("pageSize") Integer pageSize);
 }

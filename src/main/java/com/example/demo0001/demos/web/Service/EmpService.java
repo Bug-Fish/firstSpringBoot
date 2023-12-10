@@ -22,6 +22,8 @@ public interface EmpService {
 
     void updateById(Emp emp);
 
+    Emp login(Emp emp);
+
 
 //    Emp pages(Integer page, Integer pageSize);
 }
