@@ -21,6 +21,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/emps")
 public class EmpController {
+
+    // TODO SpringBoot通过注解把new对象交给了Spring底层去做，你虽然你没有new这个对象，但是你加了@Component注解，系统就自动帮你new，你自己直接使用就行非常方便；具体可以参考这个链接：https://zhuanlan.zhihu.com/p/523343141
     @Autowired
     private EmpService empService;
 //    @GetMapping
