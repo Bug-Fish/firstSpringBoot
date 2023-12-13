@@ -1,6 +1,7 @@
 package com.example.demo0001.demos.web.Controller;
 
 import com.example.demo0001.demos.web.Service.DeptService;
+import com.example.demo0001.demos.web.aop.Log;
 import com.example.demo0001.demos.web.pojo.Dept;
 import com.example.demo0001.demos.web.pojo.Result;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +25,7 @@ public class DeptController {
         List<Dept>deptList = deptService.list();
         return Result.success(deptList);
     }
+    @Log
     @DeleteMapping("/{id}")
     //PathVariable作用是可以将{id}的值直接传递给id
     public Result delete(@PathVariable Integer id){
@@ -31,6 +33,7 @@ public class DeptController {
         deptService.delete(id);
         return Result.success();
     }
+    @Log
     @PostMapping
     public Result add(@RequestBody Dept dept){
         log.info("新增部门：{}",dept);

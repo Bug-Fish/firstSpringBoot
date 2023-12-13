@@ -18,6 +18,10 @@ aliyun:
     accessKeyId: LTAI5t8ofbWuG1bE8EZ98mWQ
     accessKeySecret: 2TdKtDiDprWt0mEYL5KCxTRwSFm1DC
     bucketName: java-zwh-web
+#spring事务管理日志
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionManager: debug
 #  spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 #  spring.datasource.url=jdbc:mysql://localhost:3306/jdbc
 #  spring.datasource.username=root

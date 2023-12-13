@@ -2,6 +2,7 @@ package com.example.demo0001.demos.web.Controller;
 
 import com.example.demo0001.demos.web.Mapper.EmpMapper;
 import com.example.demo0001.demos.web.Service.EmpService;
+import com.example.demo0001.demos.web.aop.Log;
 import com.example.demo0001.demos.web.pojo.Emp;
 import com.example.demo0001.demos.web.pojo.PageBean;
 import com.example.demo0001.demos.web.pojo.Result;
@@ -41,12 +42,14 @@ public class EmpController {
         PageBean pagebean = empService.page(page,pageSize,name,gender,begin,end);
         return Result.success(pagebean);
     }
+    @Log
     @DeleteMapping("/{ids}")
     public  Result deleteById(@PathVariable List<Integer> ids){
         log.info("要删除的员工：{}",ids);
         empService.deleteById(ids);
         return Result.success();
     }
+    @Log
     @PostMapping
     public Result addById(@RequestBody Emp emp){
         log.info("增加的员工信息：{}",emp);
@@ -59,6 +62,7 @@ public class EmpController {
         Emp emp = empService.selectById(id);
         return Result.success(emp);
     }
+    @Log
     @PutMapping
     public Result updateById(@RequestBody Emp emp){
         log.info("修改部门：{}",emp);

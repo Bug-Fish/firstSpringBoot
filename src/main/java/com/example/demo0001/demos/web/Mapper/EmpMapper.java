@@ -26,6 +26,8 @@ public interface EmpMapper {
     void updateById(Emp emp );
     @Select("select * from emp where username = #{username} and password = #{password}")
     Emp getByUsernameAndPassword(Emp emp);
+    @Delete("delete from emp where dept_id=#{deptId}")
+    void deleteByDeptId(Integer deptId);
 //    @Select("select * from emp limit #{page},#{pageSize}")
 //    Emp pages(@Param("page") Integer page, @Param("pageSize") Integer pageSize);
 }
