@@ -2,6 +2,7 @@ package com.example.demo0001.demos.web.Service.impl;
 
 import com.example.demo0001.demos.web.Mapper.EmpMapper;
 import com.example.demo0001.demos.web.Service.EmpService;
+import com.example.demo0001.demos.web.aop.Log;
 import com.example.demo0001.demos.web.pojo.Emp;
 import com.example.demo0001.demos.web.pojo.PageBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,6 @@ import java.util.List;
 public class EmpServiceImpl implements EmpService {
     @Autowired
     private EmpMapper empMapper;
-
     @Override
     public PageBean page(Integer page, Integer pageSize,String name, Short gender, LocalDate begin, LocalDate end) {
         Integer  count = empMapper.count();
@@ -24,7 +24,6 @@ public class EmpServiceImpl implements EmpService {
          PageBean pagebean = new PageBean(count,empList);
         return pagebean;
     }
-
     @Override
     public void deleteById(List<Integer> ids) {
         empMapper.deleteById(ids);
@@ -36,12 +35,12 @@ public class EmpServiceImpl implements EmpService {
         emp.setUpdateTime(LocalDateTime.now());
         empMapper.addById(emp);
     }
-
+    @Log
     @Override
     public Emp selectById(Integer id) {
         return empMapper.selectById(id);
     }
-
+    @Log
     @Override
     public void updateById(Emp emp) {
         emp.setUpdateTime(LocalDateTime.now());
