@@ -1,6 +1,6 @@
 package com.example.demo0001.demos.web.Controller;
 
-import com.example.demo0001.demos.web.Service.DeptService;
+import com.example.demo0001.demos.web.service.DeptService;
 import com.example.demo0001.demos.web.aop.Log;
 import com.example.demo0001.demos.web.pojo.Dept;
 import com.example.demo0001.demos.web.pojo.Result;

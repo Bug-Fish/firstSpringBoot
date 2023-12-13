@@ -1,6 +1,6 @@
 package com.example.demo0001.demos.web.Controller;
 
-import com.example.demo0001.demos.web.Service.EmpService;
+import com.example.demo0001.demos.web.service.EmpService;
 import com.example.demo0001.demos.web.pojo.Emp;
 import com.example.demo0001.demos.web.pojo.Result;
 import com.example.demo0001.utils.JwtUtils;

@@ -58,31 +58,31 @@ public class TimeAspect {
         log.info("记录操作日志",operateLog);
         return result;
     }
-//    @Before("pt()")
-//    public void before(JoinPoint joinPoint){
-//        log.info("运行了");
-//    }
-//    @Around("pt()")
-//    public Object Test(ProceedingJoinPoint joinPoint) throws Throwable {
-//        //开始时间
-//        long begin = System.currentTimeMillis();
-//        log.info("开始");
-//        //1、获取目标对象的类名
-//        String className = joinPoint.getTarget().getClass().getName();
-//        log.info("类名：{}",className);
-//        //2、获取目标方法的方法名
-//        String methodName= joinPoint.getSignature().getName();
-//        log.info("目标方法的方法名：{}",methodName);
-//        //3、获取目标方法运行时传入的参数
-//        Object[] objects = joinPoint.getArgs();
-//        log.info("传入的参数：{}", Arrays.toString(objects));
-//        //4、获取目标方法执行
-//        Object result = joinPoint.proceed();
-//        //5、获取目标方法运行的返回值
-//        log.info("返回值：{}",result);
-//        //记录运行时间并计算结束时间
-//        long end = System.currentTimeMillis();
-//        log.info(joinPoint.getSignature()+"使用的时间是：{}ms",end-begin);
-//        return result;
-//    }
+    @Before("pt()")
+    public void before(JoinPoint joinPoint){
+        log.info("运行了");
+    }
+    @Around("pt()")
+    public Object Test(ProceedingJoinPoint joinPoint) throws Throwable {
+        //开始时间
+        long begin = System.currentTimeMillis();
+        log.info("开始");
+        //1、获取目标对象的类名
+        String className = joinPoint.getTarget().getClass().getName();
+        log.info("类名：{}",className);
+        //2、获取目标方法的方法名
+        String methodName= joinPoint.getSignature().getName();
+        log.info("目标方法的方法名：{}",methodName);
+        //3、获取目标方法运行时传入的参数
+        Object[] objects = joinPoint.getArgs();
+        log.info("传入的参数：{}", Arrays.toString(objects));
+        //4、获取目标方法执行
+        Object result = joinPoint.proceed();
+        //5、获取目标方法运行的返回值
+        log.info("返回值：{}",result);
+        //记录运行时间并计算结束时间
+        long end = System.currentTimeMillis();
+        log.info(joinPoint.getSignature()+"使用的时间是：{}ms",end-begin);
+        return result;
+    }
 }
